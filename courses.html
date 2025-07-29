@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دوره‌های آموزشی - Azad's Programmer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Specific styles for Courses Page */
+        .courses-header {
+            background-color: var(--primary-color);
+            color: var(--light-text-color);
+            padding: 80px 0 40px;
+            text-align: center;
+        }
+        .courses-header h1 {
+            color: var(--light-text-color);
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+        .courses-header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        .courses-content {
+            padding: 60px 0;
+        }
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .course-card {
+            background-color: var(--background-color);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative; /* For badge positioning */
+        }
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+        }
+        .course-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .course-card-body {
+            padding: 20px;
+        }
+        .course-card-body h3 {
+            font-size: 1.4em;
+            margin-bottom: 10px;
+        }
+        .course-card-body p {
+            font-size: 0.95em;
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        .course-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9em;
+            color: #777;
+            margin-bottom: 15px;
+        }
+        .course-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .course-meta i {
+            color: var(--primary-color);
+        }
+        .course-price {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: var(--secondary-color);
+            text-align: left; /* Adjust for RTL */
+        }
+        .course-price.free {
+            color: #28a745; /* A distinct green for free */
+        }
+        .course-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--primary-color);
+            color: var(--light-text-color);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8em;
+            font-weight: bold;
+            z-index: 10;
+        }
+
+        @media (max-width: 768px) {
+            .courses-header h1 {
+                font-size: 2.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+    <div class="container">
+        <a href="index.html" class="logo">Azad's Programmer</a>
+        <nav class="main-nav">
+            <ul class="nav-links">
+                <li><a href="index.html">صفحه اصلی</a></li>
+                <li><a href="blog.html">وبلاگ</a></li>
+                <li><a href="news.html">اخبار</a></li>
+                <li><a href="contests.html">مسابقات</a></li>
+                <li><a href="projects.html">پروژه‌ها</a></li>
+                <li><a href="courses.html">دوره‌ها</a></li>
+                <li><a href="roadmap.html">نقشه راه</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <a href="login.html" class="btn btn-primary">ورود</a>
+                <a href="register.html" class="btn btn-secondary">ثبت‌نام</a>
+
+                <div class="user-profile hidden">
+                    <a href="profile.html"> <i class="fas fa-user-circle"></i>
+                        <span>پروفایل من</span>
+                    </a>
+                </div>
+            </div>
+            <div class="hamburger-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </div>
+</header>
+
+    <div class="courses-header">
+        <div class="container">
+            <h1>دوره‌های آموزشی برنامه‌نویسی</h1>
+            <p>دانش خود را با بهترین دوره‌های تخصصی و کاربردی ارتقا دهید.</p>
+        </div>
+    </div>
+
+    <main class="courses-content">
+        <div class="container">
+            <div class="courses-grid">
+                <div class="course-card">
+                    <span class="course-badge">رایگان</span>
+                    <img src="https://via.placeholder.com/600x400/9b59b6/FFFFFF?text=Python+Basic" alt="Python Basic Course">
+                    <div class="course-card-body">
+                        <h3>دوره مقدماتی پایتون برای مبتدیان</h3>
+                        <p>این دوره شما را از صفر با مفاهیم اصلی پایتون و برنامه‌نویسی آشنا می‌کند.</p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-chalkboard-teacher"></i> مدرس: استاد قاسمی</span>
+                            <span><i class="fas fa-signal"></i> سطح: مبتدی</span>
+                        </div>
+                        <div class="course-price free">رایگان</div>
+                        <a href="#" class="btn btn-primary" style="width: 100%; margin-top: 15px;">مشاهده جزئیات</a>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <span class="course-badge">پولی</span>
+                    <img src="https://via.placeholder.com/600x400/34495e/FFFFFF?text=React+Advanced" alt="React Advanced Course">
+                    <div class="course-card-body">
+                        <h3>دوره پیشرفته React.js و Redux</h3>
+                        <p>تکنیک‌های پیشرفته React و مدیریت وضعیت با Redux را بیاموزید.</p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-chalkboard-teacher"></i> مدرس: مهندس کریمی</span>
+                            <span><i class="fas fa-signal"></i> سطح: پیشرفته</span>
+                        </div>
+                        <div class="course-price">۲۵۰,۰۰۰ تومان</div>
+                        <a href="#" class="btn btn-primary" style="width: 100%; margin-top: 15px;">مشاهده و خرید</a>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <span class="course-badge">جدید</span>
+                    <img src="https://via.placeholder.com/600x400/1abc9c/FFFFFF?text=Data+Science" alt="Data Science Course">
+                    <div class="course-card-body">
+                        <h3>مقدمه‌ای بر علم داده با پایتون</h3>
+                        <p>با اصول علم داده، پاکسازی داده‌ها و مصورسازی آشنا شوید.</p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-chalkboard-teacher"></i> مدرس: دکتر نوری</span>
+                            <span><i class="fas fa-signal"></i> سطح: متوسط</span>
+                        </div>
+                        <div class="course-price">۱۹۰,۰۰۰ تومان</div>
+                        <a href="#" class="btn btn-primary" style="width: 100%; margin-top: 15px;">مشاهده و خرید</a>
+                    </div>
+                </div>
+
+                </div>
+            <div class="pagination">
+                <a href="#">۱</a>
+                <a href="#" class="active">۲</a>
+                <a href="#">۳</a>
+                <a href="#">...</a>
+                <a href="#">بعدی</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+    <div class="container">
+        <div class="footer-columns">
+            <div class="footer-col">
+                <h3>درباره ما</h3>
+                <p>Azad's Programmer جامعه‌ای پویا برای برنامه‌نویسان با هدف یادگیری و رشد.</p>
+            </div>
+            <div class="footer-col">
+                <h3>لینک‌های مفید</h3>
+                <ul>
+                    <li><a href="#">تماس با ما</a></li>
+                    <li><a href="#">حریم خصوصی</a></li>
+                    <li><a href="#">قوانین و مقررات</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>ما را دنبال کنید</h3>
+                <div class="social-icons">
+                    <a href="https://t.me/your_telegram_group_link" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 Azad's Programmer. کلیه حقوق محفوظ است.
+        </div>
+    </div>
+</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

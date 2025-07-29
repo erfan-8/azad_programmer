@@ -1,0 +1,1614 @@
+/* General Styles */
+:root {
+    --primary-color: #6a0dad; /* Dark Purple - Main brand color */
+    --secondary-color: #4CAF50; /* Green - Accent color for highlights/success */
+    --text-color: #333; /* Dark grey for general text */
+    --light-text-color: #f4f4f4; /* Light grey for text on dark backgrounds */
+    --background-color: #ffffff; /* White for content backgrounds */
+    --light-bg-color: #f9f9f9; /* Off-white for section backgrounds */
+    --border-color: #eee; /* Light border for dividers */
+    --header-height: 80px;
+    --transition-speed: 0.3s ease; /* Global transition speed */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Vazirmatn', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    direction: rtl; /* Right-to-Left for Persian */
+    text-align: right;
+    background-color: var(--background-color);
+    overflow-x: hidden; /* Prevent horizontal scroll on small devices */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color var(--transition-speed);
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+ul {
+    list-style: none;
+}
+
+h1, h2, h3, h4 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+section {
+    padding: 80px 0; /* Consistent section padding */
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 25px; /* Slightly larger padding */
+    border-radius: 8px; /* More rounded corners */
+    font-weight: bold;
+    text-align: center;
+    transition: background-color var(--transition-speed), color var(--transition-speed), transform 0.2s ease;
+    cursor: pointer;
+    border: none;
+    font-size: 1em; /* Consistent font size */
+}
+
+.btn:hover {
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    box-shadow: 0 4px 8px rgba(106, 13, 173, 0.3); /* Shadow for primary button */
+}
+
+.btn-primary:hover {
+    background-color: #5a0ca0; /* Slightly darker */
+    box-shadow: 0 6px 12px rgba(106, 13, 173, 0.4);
+}
+
+.btn-secondary {
+    background-color: var(--light-bg-color);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    box-shadow: 0 4px 8px rgba(106, 13, 173, 0.3);
+}
+
+.btn-hero-telegram {
+    background-color: #0088cc; /* Telegram blue */
+    color: var(--light-text-color);
+    padding: 15px 35px; /* Larger padding for hero buttons */
+    font-size: 1.15em;
+    box-shadow: 0 6px 15px rgba(0, 136, 204, 0.4);
+}
+
+.btn-hero-telegram:hover {
+    background-color: #006699;
+    box-shadow: 0 8px 20px rgba(0, 136, 204, 0.5);
+}
+
+.btn-hero-explore {
+    background-color: transparent;
+    border: 2px solid var(--light-text-color);
+    color: var(--light-text-color);
+    padding: 15px 35px;
+    font-size: 1.15em;
+}
+
+.btn-hero-explore:hover {
+    background-color: var(--light-text-color);
+    color: var(--primary-color);
+}
+
+/* Header */
+.main-header {
+    background-color: var(--background-color);
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08); /* Stronger shadow */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: var(--header-height);
+}
+
+.logo {
+    font-size: 30px; /* Slightly larger logo */
+    font-weight: 700; /* Bolder */
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color var(--transition-speed);
+}
+.logo:hover {
+    color: var(--secondary-color);
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    margin-left: 30px; /* More space */
+}
+
+.nav-links li {
+    margin: 0 18px; /* More space between links */
+}
+
+.nav-links a {
+    color: var(--text-color);
+    font-weight: 500;
+    padding: 5px 0; /* Add padding for clickable area */
+    position: relative;
+}
+
+.nav-links a::after { /* Underline effect on hover */
+    content: '';
+    position: absolute;
+    right: 0; /* For RTL */
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width var(--transition-speed);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+    left: 0; /* For RTL */
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 12px; /* More gap */
+    align-items: center;
+}
+
+.user-profile {
+    display: flex; /* Flex for icon and text */
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    position: relative; /* For dropdown */
+    padding: 8px 12px; /* Add padding for clickable area */
+    border-radius: 8px;
+    transition: background-color var(--transition-speed);
+}
+
+.user-profile:hover {
+    background-color: var(--light-bg-color);
+}
+
+.user-profile a { /* Style for the actual link inside user-profile */
+    color: var(--primary-color);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.user-profile a:hover {
+    color: var(--secondary-color);
+}
+
+.user-profile i {
+    font-size: 26px; /* Slightly larger icon */
+    color: var(--primary-color);
+}
+
+/* User Profile Dropdown (Basic) */
+.profile-dropdown {
+    position: absolute;
+    top: 100%; /* Below the user-profile div */
+    right: 0; /* Align to the right for RTL */
+    background-color: var(--background-color);
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    min-width: 180px;
+    padding: 10px 0;
+    margin-top: 10px; /* Space from header */
+    display: none; /* Hidden by default */
+    z-index: 1001;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity var(--transition-speed), transform var(--transition-speed);
+}
+
+.user-profile:hover .profile-dropdown {
+    display: block; /* Show on hover */
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.profile-dropdown a {
+    display: block;
+    padding: 10px 20px;
+    color: var(--text-color);
+    text-align: right; /* For RTL */
+    white-space: nowrap; /* Prevent text wrapping */
+    gap: 0; /* Remove gap from parent .user-profile a */
+}
+
+.profile-dropdown a:hover {
+    background-color: var(--light-bg-color);
+    color: var(--primary-color);
+}
+
+
+.hamburger-menu {
+    display: none; /* Hidden on desktop */
+    font-size: 28px; /* Larger icon */
+    cursor: pointer;
+    color: var(--primary-color);
+}
+
+/* Utility Classes */
+.hidden {
+    display: none !important;
+}
+
+/* Auth Pages Specific Styles (reused for login/register) */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - var(--header-height) - 150px); /* Adjust based on header/footer height */
+    padding: 40px 20px;
+    background-color: var(--light-bg-color);
+}
+.auth-box {
+    background-color: var(--background-color);
+    padding: 40px;
+    border-radius: 12px; /* More rounded */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Stronger shadow */
+    width: 100%;
+    max-width: 480px; /* Slightly wider */
+    text-align: center;
+    transition: transform var(--transition-speed); /* Add transition */
+}
+.auth-box:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+}
+.auth-box h2 {
+    font-size: 2.2em;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+}
+.auth-form .form-group {
+    margin-bottom: 25px; /* More space */
+    text-align: right; /* For RTL */
+}
+.auth-form label {
+    display: block;
+    margin-bottom: 10px; /* More space */
+    font-weight: 600; /* Bolder label */
+    color: #555;
+}
+.auth-form input[type="text"],
+.auth-form input[type="email"],
+.auth-form input[type="password"],
+.auth-form textarea, /* For projects page form */
+.auth-form select { /* For projects page form */
+    width: 100%;
+    padding: 14px 18px; /* Larger inputs */
+    border: 1px solid var(--border-color);
+    border-radius: 8px; /* More rounded */
+    font-size: 1.05em; /* Slightly larger font */
+    font-family: 'Vazirmatn', sans-serif;
+    transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+.auth-form input:focus,
+.auth-form textarea:focus,
+.auth-form select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(106, 13, 173, 0.25); /* Larger, more prominent shadow */
+}
+.auth-form .btn-submit {
+    width: 100%;
+    padding: 14px; /* Larger submit button */
+    font-size: 1.2em;
+    margin-top: 30px;
+}
+.auth-links {
+    margin-top: 30px; /* More space */
+    font-size: 1em;
+}
+.auth-links a {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Hero Section */
+.hero-section {
+    /* حذف پس‌زمینه و فیلتر blur از اینجا */
+    background: none; /* مهم: بک‌گراند رو از اینجا حذف می‌کنیم */
+    filter: none;     /* مهم: فیلتر رو از اینجا حذف می‌کنیم */
+    -webkit-filter: none; /* مهم: فیلتر رو از اینجا حذف می‌کنیم */
+
+    color: var(--light-text-color);
+    text-align: center;
+    padding: 120px 0;
+    min-height: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    position: relative;
+    overflow: hidden;
+    /* Z-index پایین‌تر برای hero-section اصلی، تا محتوا روی آن قرار گیرد */
+    z-index: 1;
+}
+
+/* این div جدید برای نمایش تصویر پس‌زمینه و اعمال blur */
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* قرار دادن تصویر شما اینجا */
+    background: url('Computer_Programmer1920X10180.jpg') no-repeat center center/cover;
+
+    /* اعمال فیلتر blur فقط روی این div */
+    filter: blur(4px); /* مقدار blur رو کمی بیشتر کردم چون کل تصویر رو تار میکنه و محتوا روش میاد */
+    -webkit-filter: blur(4px);
+
+    /* اضافه کردن گرادینت تیره شفاف روی تصویر تار شده */
+    /* از rgba برای شفافیت استفاده میکنیم */
+    background-image: linear-gradient(to right, rgba(26, 42, 75, 0.7), rgba(58, 28, 113, 0.7)), /* Dark Blue to Deep Purple with 70% opacity */
+                      url('Computer_Programmer1920X10180.jpg'); /* تصویر تکرار شد تا گرادینت روی آن اعمال شود */
+    background-size: cover; /* مطمئن شویم تصویر تمام فضا را پوشش دهد */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay; /* نحوه ترکیب گرادینت با تصویر تار شده */
+
+    /* Z-index پایین‌تر از محتوا، اما بالاتر از z-index اصلی hero-section اگر لازم باشد */
+    z-index: -1; /* این عنصر در پس‌زمینه قرار میگیرد */
+}
+
+
+/* مطمئن می‌شویم که محتوای اصلی روی همه چیز قرار گیرد */
+.hero-section .container {
+    position: relative;
+    z-index: 10; /* Z-index بسیار بالا برای متن و دکمه‌ها */
+}
+
+/* برای موبایل، شاید بخواهید blur رو کمی کمتر کنید تا عملکرد بهتر باشه یا اصلا حذف کنید */
+@media (max-width: 768px) {
+    .hero-background {
+        filter: blur(3px); /* کمی کمتر تار برای موبایل */
+        -webkit-filter: blur(3px);
+    }
+}
+
+.hero-section h1 {
+    font-size: 4em; /* Larger heading */
+    margin-bottom: 25px;
+    color: var(--light-text-color);
+    line-height: 1.2;
+}
+
+.hero-section p {
+    font-size: 1.4em;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 25px; /* More gap */
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+/* Features Section */
+.features-section {
+    background-color: var(--light-bg-color);
+    text-align: center;
+    padding: 80px 0;
+}
+
+.features-section h2 {
+    font-size: 2.8em; /* Larger heading */
+    margin-bottom: 50px; /* More space */
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Min width for features */
+    gap: 35px; /* More gap */
+}
+
+.feature-item {
+    background-color: var(--background-color);
+    padding: 35px; /* More padding */
+    border-radius: 12px; /* More rounded */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); /* Stronger shadow */
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.feature-item:hover {
+    transform: translateY(-8px); /* More pronounced lift */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.feature-item i {
+    font-size: 3.5em; /* Larger icons */
+    color: var(--primary-color);
+    margin-bottom: 25px;
+}
+
+.feature-item h3 {
+    font-size: 1.7em; /* Larger heading */
+    margin-bottom: 15px;
+}
+.feature-item p {
+    font-size: 1em;
+    color: #555;
+}
+
+
+/* Testimonials Section */
+.testimonials-section {
+    background-color: var(--background-color); /* Ensures white background */
+    text-align: center;
+    padding: 80px 0;
+}
+
+.testimonials-section h2 {
+    font-size: 2.8em;
+    margin-bottom: 50px;
+}
+
+.testimonial-slider {
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* More gap */
+    flex-wrap: wrap;
+}
+
+.testimonial-item {
+    background-color: var(--light-bg-color);
+    padding: 35px; /* More padding */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    max-width: 480px; /* Slightly wider */
+    text-align: center;
+    position: relative;
+}
+.testimonial-item::before { /* Quote icon */
+    content: "\f10d"; /* Font Awesome quote-left icon */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2.5em;
+    color: rgba(106, 13, 173, 0.1); /* Lighter primary color for background icon */
+    z-index: 0;
+}
+
+.testimonial-item p {
+    font-style: italic;
+    margin-bottom: 25px;
+    color: var(--text-color);
+    font-size: 1.15em;
+    position: relative; /* Bring text to front */
+    z-index: 1;
+}
+
+.testimonial-item h4 {
+    color: var(--primary-color);
+    margin-bottom: 8px;
+    font-size: 1.2em;
+}
+
+.testimonial-item span {
+    font-size: 0.95em;
+    color: #777;
+}
+
+/* Blog & News Pages Header */
+.blog-header, .news-header, .courses-header, .contests-header, .projects-header, .profile-header {
+    color: var(--light-text-color);
+    padding: 100px 0 50px; /* More vertical padding */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+}
+.blog-header { background: linear-gradient(to right, #6a0dadbe, #00c6ff7a); } /* same as hero for consistency */
+.news-header { background: linear-gradient(to left, #8a2be2, #6a0dad); } /* Lighter purple gradient */
+.courses-header { background: linear-gradient(to right, #4CAF50, #8bc34a); } /* Green gradient */
+.contests-header { background: linear-gradient(to left, #FF5722, #FF9800); } /* Orange/Red gradient */
+.projects-header { background: linear-gradient(to right, #607d8b, #7f8c8d); } /* Greyish-blue gradient */
+.profile-header { background: linear-gradient(to left, #007bff, #0056b3); } /* Blue gradient */
+
+
+.blog-header h1, .news-header h1, .courses-header h1, .contests-header h1, .projects-header h1, .profile-header h1 {
+    color: var(--light-text-color);
+    font-size: 3.8em; /* Larger headings */
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+}
+.blog-header p, .news-header p, .courses-header p, .contests-header p, .projects-header p, .profile-header p {
+    font-size: 1.2em;
+    opacity: 0.95;
+    text-shadow: 0 0 3px rgba(0,0,0,0.4);
+}
+
+/* Blog/News/Courses/Projects/Profile Content Section General */
+.blog-content, .news-content, .courses-content, .projects-content, .profile-content {
+    padding: 60px 0;
+    background-color: var(--light-bg-color); /* Light background for these sections */
+}
+
+/* Card Grids */
+.blog-grid, .news-list, .courses-grid, .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Min width for items */
+    gap: 35px;
+}
+
+/* Individual Card Styles (Blog, News, Courses) */
+.blog-post-card, .news-item, .course-card, .project-card {
+    background-color: var(--background-color);
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.blog-post-card:hover, .news-item:hover, .course-card:hover, .project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+.blog-post-card img, .news-item img, .course-card img {
+    width: 100%;
+    height: 220px; /* Consistent image height */
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+.blog-post-card:hover img, .news-item:hover img, .course-card:hover img {
+    transform: scale(1.05); /* Zoom effect on image hover */
+}
+.blog-post-card-body, .news-item-body, .course-card-body, .project-card-body {
+    padding: 25px; /* More padding */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+.blog-post-card-body h3, .news-item-body h3, .course-card-body h3, .project-card-body h3 {
+    font-size: 1.6em; /* Larger headings */
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+.blog-post-card-body p, .news-item-body p, .course-card-body p, .project-card-body p {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 18px;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+.news-meta, .course-meta, .project-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 15px; /* More flexible gap */
+    margin-top: 10px; /* Space after description */
+    font-size: 0.9em;
+    color: #777;
+}
+.news-meta span, .course-meta span, .project-details span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.news-meta i, .course-meta i, .project-details i {
+    color: var(--primary-color);
+}
+.news-meta .category {
+    background-color: rgba(106, 13, 173, 0.1); /* Light background for category */
+    color: var(--primary-color);
+    padding: 4px 10px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 0.85em;
+}
+.course-price {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: var(--secondary-color);
+    text-align: left; /* Adjust for RTL */
+    margin-top: 15px;
+}
+.course-price.free {
+    color: #28a745; /* Distinct green for free */
+}
+.course-badge {
+    position: absolute;
+    top: 18px; /* Slightly more inset */
+    right: 18px;
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    padding: 6px 12px; /* Larger badge */
+    border-radius: 8px; /* More rounded */
+    font-size: 0.85em;
+    font-weight: bold;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Contest Page Specific */
+.contest-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px; /* More space */
+    border-bottom: 2px solid var(--border-color);
+}
+.contest-tabs button {
+    background-color: transparent;
+    border: none;
+    padding: 18px 30px; /* Larger tabs */
+    font-size: 1.2em; /* Larger font */
+    cursor: pointer;
+    font-weight: 700; /* Bolder */
+    color: #777;
+    transition: color var(--transition-speed), border-bottom var(--transition-speed);
+    position: relative;
+    overflow: hidden; /* For underline effect */
+}
+.contest-tabs button::after { /* Underline effect for tabs */
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-color: var(--primary-color);
+    transition: width var(--transition-speed);
+}
+.contest-tabs button.active {
+    color: var(--primary-color);
+}
+.contest-tabs button.active::after {
+    width: 100%;
+    left: 0;
+}
+.contest-tabs button:hover:not(.active) {
+    color: #555;
+}
+
+.contest-card-header {
+    background: linear-gradient(to left, var(--primary-color), #8a2be2); /* Gradient header for contest cards */
+    color: var(--light-text-color);
+    padding: 18px 25px; /* More padding */
+    font-size: 1.3em;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.contest-card-header i {
+    font-size: 1.5em;
+    color: var(--light-text-color);
+}
+.contest-card .btn-primary, .contest-card .btn-secondary {
+    width: 100%;
+    margin-top: 15px;
+}
+.contest-status-badge {
+    position: absolute;
+    top: 18px;
+    left: 18px; /* Adjust for RTL */
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.85em;
+    font-weight: bold;
+    color: var(--light-text-color);
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.status-active { background-color: #28a745; } /* Green */
+.status-upcoming { background-color: #ffc107; color: #333; } /* Yellow */
+.status-finished { background-color: #dc3545; } /* Red */
+
+
+/* Projects Page Specific */
+.project-submission-box {
+    background-color: var(--background-color);
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    padding: 40px; /* More padding */
+    margin-bottom: 60px; /* More space */
+    text-align: right;
+}
+.project-submission-box h2 {
+    font-size: 2.5em;
+    color: var(--primary-color);
+    margin-bottom: 35px;
+    text-align: center;
+}
+.project-form .btn-submit {
+    margin-top: 40px; /* More space */
+    width: auto;
+    min-width: 250px; /* Wider button */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.project-filters {
+    display: flex;
+    gap: 20px; /* More space */
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.project-filters select {
+    padding: 12px 20px; /* Larger selects */
+    border: 1px solid var(--border-color);
+    border-radius: 8px; /* More rounded */
+    font-family: 'Vazirmatn', sans-serif;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: var(--background-color);
+    transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+.project-filters select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(106, 13, 173, 0.25);
+}
+.project-card-header {
+    background-color: #607d8b; /* Project Header color */
+    color: var(--light-text-color);
+    padding: 18px 25px;
+    font-size: 1.3em;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.project-card-header i {
+    font-size: 1.5em;
+    color: var(--light-text-color);
+}
+.project-card .btn-primary, .project-card .btn-secondary {
+    width: 100%;
+    margin-top: 15px;
+}
+.project-status-badge {
+    position: absolute;
+    top: 18px;
+    right: 18px; /* Align to right for RTL in project cards */
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.85em;
+    font-weight: bold;
+    color: var(--light-text-color);
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.status-open { background-color: #28a745; }
+.status-inprogress { background-color: #ffc107; color: #333; }
+.status-completed { background-color: #6c757d; }
+
+
+/* User Profile Page Specific */
+.profile-content {
+    padding: 60px 0;
+    display: flex;
+    gap: 40px; /* More gap */
+    flex-wrap: wrap;
+    align-items: flex-start;
+    background-color: var(--light-bg-color); /* Light background for profile area */
+}
+.profile-sidebar {
+    flex: 0 0 300px; /* Slightly wider sidebar */
+    background-color: var(--background-color);
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    padding: 35px; /* More padding */
+    text-align: center;
+}
+.profile-avatar {
+    width: 130px; /* Larger avatar */
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 25px; /* More space */
+    border: 5px solid var(--primary-color); /* Thicker border */
+    box-shadow: 0 0 0 8px rgba(106, 13, 173, 0.2); /* Stronger outer shadow */
+}
+.profile-sidebar h2 {
+    font-size: 2em; /* Larger heading */
+    color: var(--primary-color);
+    margin-bottom: 12px;
+}
+.profile-sidebar p {
+    font-size: 1.05em;
+    color: #777;
+    margin-bottom: 30px;
+}
+.profile-sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+}
+.profile-sidebar-nav li {
+    margin-bottom: 12px; /* More space */
+}
+.profile-sidebar-nav a {
+    display: block;
+    padding: 15px 20px; /* Larger clickable area */
+    background-color: var(--light-bg-color);
+    border-radius: 10px; /* More rounded */
+    color: var(--text-color);
+    font-weight: 600; /* Bolder */
+    transition: background-color var(--transition-speed), color var(--transition-speed), transform 0.2s ease;
+    text-align: right;
+}
+.profile-sidebar-nav a:hover, .profile-sidebar-nav a.active {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    transform: translateX(-5px); /* Slight slide effect */
+}
+
+.profile-main-content {
+    flex: 1;
+    min-width: 350px; /* Minimum width for main content */
+}
+.profile-section {
+    background-color: var(--background-color);
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    padding: 35px; /* More padding */
+    margin-bottom: 40px; /* More space */
+    text-align: right;
+}
+.profile-section h2 {
+    font-size: 2.2em;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--border-color); /* Thicker border */
+    padding-bottom: 15px;
+}
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px; /* More space */
+}
+.info-item strong {
+    display: block;
+    color: #555;
+    margin-bottom: 8px;
+    font-size: 0.95em;
+}
+.info-item span {
+    font-weight: 700; /* Bolder */
+    color: var(--text-color);
+    font-size: 1.15em;
+}
+
+.profile-courses-grid, .profile-projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px; /* More space */
+}
+.profile-course-card, .profile-project-card {
+    background-color: var(--light-bg-color);
+    border-radius: 10px;
+    padding: 20px; /* More padding */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08); /* Slightly stronger shadow */
+    transition: transform var(--transition-speed);
+}
+.profile-course-card:hover, .profile-project-card:hover {
+    transform: translateY(-5px);
+}
+.profile-course-card h3, .profile-project-card h3 {
+    font-size: 1.3em;
+    color: var(--primary-color);
+    margin-bottom: 12px;
+}
+.profile-course-card p, .profile-project-card p {
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 15px;
+}
+.profile-course-card .btn-secondary, .profile-project-card .btn-secondary {
+    width: 100%;
+    margin-top: 10px;
+}
+.no-items {
+    text-align: center;
+    color: #777;
+    font-size: 1.2em; /* Larger text */
+    padding: 40px; /* More padding */
+    background-color: var(--background-color);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Footer */
+.main-footer {
+    background-color: #222;
+    color: var(--light-text-color);
+    padding: 60px 0 30px; /* More padding */
+    text-align: right;
+    margin-top: 60px; /* More space from content */
+}
+
+.footer-columns {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px; /* More gap */
+    margin-bottom: 40px;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 220px; /* Slightly wider columns */
+}
+
+.footer-col h3 {
+    color: var(--light-text-color);
+    margin-bottom: 25px; /* More space */
+    font-size: 1.4em;
+}
+
+.footer-col p, .footer-col ul li a {
+    color: rgba(255, 255, 255, 0.8); /* Slightly less opaque */
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a:hover {
+    color: var(--secondary-color);
+}
+
+.social-icons a {
+    color: var(--light-text-color);
+    font-size: 2em; /* Larger icons */
+    margin-left: 20px; /* More space */
+    transition: color var(--transition-speed), transform 0.2s ease;
+}
+
+.social-icons a:hover {
+    color: var(--secondary-color);
+    transform: translateY(-3px); /* Slight lift */
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.15); /* Thicker border */
+    padding-top: 25px; /* More padding */
+    font-size: 0.95em;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .main-nav .nav-links {
+        margin-left: 15px; /* Adjust spacing */
+    }
+    .nav-links li {
+        margin: 0 10px; /* Adjust spacing */
+    }
+    .profile-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .profile-sidebar {
+        width: 100%;
+        flex: none;
+        max-width: 480px; /* Limit width */
+    }
+    .profile-sidebar-nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .profile-sidebar-nav li {
+        margin: 5px 10px;
+    }
+    .profile-main-content {
+        width: 100%;
+        flex: none;
+        max-width: 900px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .main-header .container {
+        flex-wrap: wrap; /* Allow header items to wrap */
+        justify-content: center;
+    }
+    .logo {
+        margin-bottom: 15px;
+        width: 100%;
+        text-align: center;
+    }
+    .main-nav {
+        width: 100%;
+        justify-content: space-between;
+    }
+    .main-nav .nav-links {
+        display: none; /* Hide desktop nav */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: var(--header-height);
+        right: 0;
+        background-color: var(--background-color);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        padding: 20px 0;
+        border-top: 1px solid var(--border-color);
+    }
+
+    .main-nav .nav-links.active {
+        display: flex;
+    }
+
+    .main-nav .nav-links li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .main-nav .auth-buttons {
+        display: none; /* Hide auth buttons on small screens initially */
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        margin-top: 10px;
+        padding-top: 10px;
+        border-top: 1px solid var(--border-color);
+    }
+    /* When active (from JS), ensure it's displayed */
+    .main-nav .auth-buttons.active {
+        display: flex;
+    }
+    .main-nav .auth-buttons.logged-in.active { /* Ensure logged-in state also displays correctly */
+        display: flex;
+    }
+
+    .hamburger-menu {
+        display: block; /* Show hamburger menu */
+    }
+
+    /* Adjust hero section for smaller screens */
+    .hero-section {
+        padding: 80px 0;
+        min-height: 400px;
+    }
+    .hero-section h1 {
+        font-size: 2.8em;
+    }
+    .hero-section p {
+        font-size: 1.1em;
+    }
+    .hero-actions {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .btn-hero-telegram, .btn-hero-explore {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    /* Adjust section headings */
+    section h2 {
+        font-size: 2.2em;
+        margin-bottom: 30px;
+    }
+    .blog-header h1, .news-header h1, .courses-header h1, .contests-header h1, .projects-header h1, .profile-header h1 {
+        font-size: 2.8em;
+    }
+
+    .feature-grid, .blog-grid, .news-list, .courses-grid, .project-grid {
+        grid-template-columns: 1fr;
+    }
+    .testimonial-item {
+        max-width: 90%;
+    }
+
+    .contest-tabs {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .contest-tabs button {
+        width: 90%;
+        margin: 0 auto;
+    }
+    .project-filters {
+        flex-direction: column;
+        align-items: center;
+    }
+    .project-filters select {
+        width: 90%;
+    }
+
+    .footer-columns {
+        flex-direction: column;
+        text-align: center;
+    }
+    .social-icons {
+        justify-content: center;
+        display: flex;
+    }
+    .social-icons a {
+        margin: 0 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .auth-box {
+        padding: 25px;
+    }
+    .auth-box h2 {
+        font-size: 1.8em;
+    }
+    .auth-form input, .auth-form textarea, .auth-form select {
+        padding: 10px 12px;
+    }
+    .btn-hero-telegram, .btn-hero-explore {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+    .hero-section h1 {
+        font-size: 2.2em;
+    }
+    .hero-section p {
+        font-size: 0.95em;
+    }
+}
+/* Roadmap Page Specific */
+.roadmap-header {
+    background: linear-gradient(to right, #6a0dadbe, #00c6ff7a); /* Consistent with Hero/Blog */
+    color: var(--light-text-color);
+    padding: 100px 0 50px;
+    text-align: center;
+}
+.roadmap-header h1 {
+    color: var(--light-text-color);
+    font-size: 3.8em;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+}
+.roadmap-header p {
+    font-size: 1.2em;
+    opacity: 0.95;
+    text-shadow: 0 0 3px rgba(0,0,0,0.4);
+}
+
+.roadmap-content {
+    padding: 60px 0;
+    background-color: var(--light-bg-color);
+}
+
+.roadmap-selection-box {
+    background-color: var(--background-color);
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    margin-bottom: 60px;
+    text-align: center;
+}
+.roadmap-selection-box h2 {
+    font-size: 2.5em;
+    color: var(--primary-color);
+    margin-bottom: 35px;
+}
+
+.field-selection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjusted for more columns */
+    gap: 30px;
+}
+
+.field-card {
+    background-color: var(--light-bg-color);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed), background-color var(--transition-speed);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.field-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    background-color: #f0f0f0; /* Slight background change on hover */
+}
+.field-card.active {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(106, 13, 173, 0.4);
+}
+.field-card.active i, .field-card.active h3, .field-card.active p {
+    color: var(--light-text-color); /* Ensure text/icons are white on active */
+}
+
+.field-card i {
+    font-size: 3.5em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    transition: color var(--transition-speed);
+}
+.field-card.active i {
+    color: var(--light-text-color);
+}
+
+.field-card h3 {
+    font-size: 1.7em;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    transition: color var(--transition-speed);
+}
+.field-card.active h3 {
+    color: var(--light-text-color);
+}
+
+.field-card p {
+    font-size: 0.95em;
+    color: #555;
+    transition: color var(--transition-speed);
+}
+.field-card.active p {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.roadmap-display-area {
+    margin-top: 40px;
+    min-height: 400px; /* Ensure space for roadmaps */
+}
+
+.roadmap-message {
+    background-color: var(--background-color);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    padding: 40px;
+    text-align: center;
+    color: #777;
+    font-size: 1.3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    height: 300px; /* Fixed height for message box */
+}
+.roadmap-message i {
+    font-size: 3.5em;
+    color: #bbb;
+}
+
+.roadmap-section {
+    background-color: var(--background-color);
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    text-align: right;
+}
+.roadmap-section h2 {
+    font-size: 2.5em;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    text-align: center;
+}
+.roadmap-description {
+    font-size: 1.15em;
+    color: #666;
+    margin-bottom: 40px;
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.roadmap-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.step-card {
+    background-color: var(--light-bg-color);
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: relative;
+    border-right: 5px solid var(--primary-color); /* Accent border for RTL */
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+.step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.step-number {
+    position: absolute;
+    top: -15px;
+    right: -15px; /* Position for RTL */
+    background-color: var(--secondary-color);
+    color: var(--light-text-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.step-card h3 {
+    font-size: 1.5em;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    padding-right: 20px; /* Space for number badge */
+}
+.step-card ul {
+    margin-bottom: 20px;
+    list-style: disc inside; /* Default disc style */
+    padding-right: 15px; /* Indent for bullets */
+}
+.step-card ul li {
+    margin-bottom: 8px;
+    font-size: 0.95em;
+    color: #555;
+}
+.step-card .btn-small {
+    padding: 8px 15px;
+    font-size: 0.9em;
+}
+
+/* Responsive adjustments for Roadmap */
+@media (max-width: 768px) {
+    .roadmap-header h1 {
+        font-size: 2.8em;
+    }
+    .field-selection-grid {
+        grid-template-columns: 1fr;
+    }
+    .step-card {
+        padding: 20px;
+    }
+    .step-card h3 {
+        font-size: 1.3em;
+    }
+}
+/* --- Dark Mode Specific Styles --- */
+
+/* Define Dark Mode Colors by overriding existing variables */
+body.dark-mode {
+    --primary-color: #8a2be2;          /* Lighter Purple for Dark Mode */
+    --secondary-color: #76ff03;        /* Brighter Green for Dark Mode */
+    --text-color: #e0e0e0;             /* Light grey for text */
+    --light-text-color: #333;          /* Dark text on light background (for specific cases) */
+    --background-color: #1a1a2e;       /* Deep dark blue/purple */
+    --light-bg-color: #2c2c4b;         /* Slightly lighter dark background */
+    --border-color: #444;              /* Darker border */
+}
+
+/* Explicitly apply transitions to elements that change color/background */
+body,
+.main-header,
+.main-header .container,
+.logo,
+.nav-links a,
+.auth-buttons .btn,
+.user-profile,
+.user-profile a,
+.user-profile i,
+.profile-dropdown,
+.profile-dropdown a,
+.hamburger-menu,
+.auth-container,
+.auth-box,
+.auth-form input,
+.auth-form textarea,
+.auth-form select,
+.hero-section,
+.hero-background,
+.features-section,
+.feature-item,
+.feature-item i,
+.feature-item h3,
+.feature-item p,
+.testimonials-section,
+.testimonial-item,
+.testimonial-item p,
+.testimonial-item h4,
+.testimonial-item span,
+.blog-header, .news-header, .courses-header, .contests-header, .projects-header, .profile-header, .roadmap-header,
+.blog-content, .news-content, .courses-content, .projects-content, .profile-content, .roadmap-content,
+.blog-post-card, .news-item, .course-card, .project-card,
+.blog-post-card-body h3, .news-item-body h3, .course-card-body h3, .project-card-body h3,
+.blog-post-card-body p, .news-item-body p, .course-card-body p, .project-card-body p,
+.news-meta span, .course-meta span, .project-details span,
+.news-meta i, .course-meta i, .project-details i,
+.news-meta .category,
+.course-price,
+.course-badge,
+.contest-tabs button,
+.contest-tabs button::after,
+.contest-card-header,
+.contest-card-header i,
+.project-submission-box,
+.project-submission-box h2,
+.project-form label,
+.project-form input,
+.project-form textarea,
+.project-form select,
+.project-card-header,
+.project-card-header i,
+.profile-sidebar,
+.profile-sidebar h2,
+.profile-sidebar p,
+.profile-sidebar-nav a,
+.profile-section,
+.profile-section h2,
+.info-item strong,
+.info-item span,
+.profile-course-card, .profile-project-card,
+.profile-course-card h3, .profile-project-card h3,
+.profile-course-card p, .profile-project-card p,
+.no-items,
+.roadmap-selection-box,
+.roadmap-selection-box h2,
+.field-card,
+.field-card i,
+.field-card h3,
+.field-card p,
+.roadmap-message,
+.roadmap-message i,
+.roadmap-section,
+.roadmap-section h2,
+.roadmap-description,
+.step-card,
+.step-card h3,
+.step-card ul li,
+.step-number,
+.main-footer,
+.footer-col h3,
+.footer-col p, .footer-col ul li a,
+.copyright,
+.social-icons a,
+.theme-toggle {
+    transition: background-color var(--transition-speed), color var(--transition-speed), border-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+
+/* Dark Mode Overrides for existing elements - using original variable names for compatibility */
+body.dark-mode .auth-form label {
+    color: var(--text-color); /* To ensure labels are visible in dark mode */
+}
+body.dark-mode .auth-form input[type="text"],
+body.dark-mode .auth-form input[type="email"],
+body.dark-mode .auth-form input[type="password"],
+body.dark-mode .auth-form textarea,
+body.dark-mode .auth-form select {
+    background-color: var(--background-color); /* Ensures input background changes */
+    color: var(--text-color); /* Ensures input text color changes */
+    border-color: var(--border-color);
+}
+body.dark-mode .auth-form input:focus,
+body.dark-mode .auth-form textarea:focus,
+body.dark-mode .auth-form select:focus {
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--primary-color) 25%, transparent);
+}
+
+
+/* Dark Mode specific background adjustments for headers (if needed to be different from original light mode gradient) */
+body.dark-mode .blog-header { background: linear-gradient(to right, color-mix(in srgb, var(--primary-color) 80%, black), color-mix(in srgb, var(--primary-color) 50%, black)); }
+body.dark-mode .news-header { background: linear-gradient(to left, color-mix(in srgb, var(--primary-color) 70%, black), var(--primary-color)); }
+body.dark-mode .courses-header { background: linear-gradient(to right, color-mix(in srgb, var(--secondary-color) 80%, black), color-mix(in srgb, var(--secondary-color) 50%, black)); }
+body.dark-mode .contests-header { background: linear-gradient(to left, #8B0000, #8B4513); }
+body.dark-mode .projects-header { background: linear-gradient(to right, #2f4f4f, #1e3636); }
+body.dark-mode .profile-header { background: linear-gradient(to left, #000080, #00004d); }
+body.dark-mode .roadmap-header { background: linear-gradient(to right, color-mix(in srgb, var(--primary-color) 80%, black), color-mix(in srgb, var(--primary-color) 50%, black)); }
+
+
+/* Hero Section Dark Mode adjustments */
+/* The hero-background will adjust based on the body.dark-mode --primary-color */
+body.dark-mode .hero-background {
+    background-image: linear-gradient(to right, rgba(10, 20, 30, 0.8), rgba(20, 10, 40, 0.8)), /* Slightly darker overlay in dark mode */
+                      url('Computer_Programmer1920X10180.jpg');
+}
+
+
+/* Theme Toggle Button Style */
+.theme-toggle {
+    position: fixed;
+    bottom: 30px;
+    left: 30px; /* For RTL, fixed from left */
+    background-color: var(--primary-color); /* Uses primary color from root or dark-mode */
+    color: var(--light-text-color); /* Uses light-text-color from root or dark-mode */
+    border: none;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: background-color var(--transition-speed), color var(--transition-speed), transform 0.2s ease, box-shadow var(--transition-speed);
+    z-index: 1000;
+}
+
+.theme-toggle:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Specific theme toggle color in dark mode for good contrast against dark background */
+body.dark-mode .theme-toggle {
+    background-color: var(--secondary-color); /* Uses secondary color from dark-mode */
+    color: var(--text-color); /* Use dark-mode text color for icon to be visible */
+    box-shadow: 0 5px 15px rgba(118, 255, 3, 0.3); /* Shadow for secondary color */
+}
+
+
+/* Responsive adjustments for theme toggle */
+@media (max-width: 768px) {
+    .theme-toggle {
+        bottom: 20px;
+        left: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 22px;
+    }
+}

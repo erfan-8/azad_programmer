@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اخبار - Azad's Programmer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Specific styles for News Page */
+        .news-header {
+            background: linear-gradient(to left, var(--primary-color), #8a2be2); /* Lighter purple gradient */
+            color: var(--light-text-color);
+            padding: 80px 0 40px;
+            text-align: center;
+        }
+        .news-header h1 {
+            color: var(--light-text-color);
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+        .news-header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        .news-content {
+            padding: 60px 0;
+        }
+        .news-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .news-item {
+            background-color: var(--background-color);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .news-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+        }
+        .news-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+        .news-item-body {
+            padding: 20px;
+            flex-grow: 1; /* Allow content to take available space */
+            display: flex;
+            flex-direction: column;
+        }
+        .news-item-body h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        .news-item-body p {
+            font-size: 0.95em;
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.5;
+            flex-grow: 1; /* Make description take available space */
+        }
+        .news-meta {
+            font-size: 0.85em;
+            color: #777;
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .news-meta .date {
+            font-weight: bold;
+        }
+        .news-meta .category {
+            background-color: #eee;
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-size: 0.8em;
+        }
+        .news-item .read-more {
+            display: inline-block;
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 0.9em;
+            margin-top: 15px;
+            text-align: left; /* Aligned to left in RTL */
+        }
+        .news-item .read-more:hover {
+            color: var(--secondary-color);
+        }
+        @media (max-width: 768px) {
+            .news-header h1 {
+                font-size: 2.5em;
+            }
+        }
+    </style>
+</head>
+<body class="news-page">
+    <header class="main-header">
+    <div class="container">
+        <a href="index.html" class="logo">Azad's Programmer</a>
+        <nav class="main-nav">
+            <ul class="nav-links">
+                <li><a href="index.html">صفحه اصلی</a></li>
+                <li><a href="blog.html">وبلاگ</a></li>
+                <li><a href="news.html">اخبار</a></li>
+                <li><a href="contests.html">مسابقات</a></li>
+                <li><a href="projects.html">پروژه‌ها</a></li>
+                <li><a href="courses.html">دوره‌ها</a></li>
+                <li><a href="roadmap.html">نقشه راه</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <a href="login.html" class="btn btn-primary">ورود</a>
+                <a href="register.html" class="btn btn-secondary">ثبت‌نام</a>
+
+                <div class="user-profile hidden">
+                    <a href="profile.html"> <i class="fas fa-user-circle"></i>
+                        <span>پروفایل من</span>
+                    </a>
+                </div>
+            </div>
+            <div class="hamburger-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </div>
+</header>
+    <div class="news-header">
+        <div class="container">
+            <h1>آخرین اخبار تکنولوژی</h1>
+            <p>جدیدترین رویدادها، آپدیت‌ها و تحولات دنیای برنامه‌نویسی را دنبال کنید.</p>
+        </div>
+    </div>
+
+    <main class="news-content">
+        <div class="container">
+            <div class="news-list">
+                <div class="news-item">
+                    <img src="https://via.placeholder.com/600x400/8e44ad/FFFFFF?text=AI+Breakthrough" alt="AI News">
+                    <div class="news-item-body">
+                        <h3>پیشرفت‌های اخیر هوش مصنوعی: مدل‌های زبانی قدرتمندتر می‌شوند</h3>
+                        <p>گزارش‌ها حاکی از آن است که نسل جدیدی از مدل‌های زبانی هوش مصنوعی با قابلیت‌های شگفت‌انگیز در راه است...</p>
+                        <div class="news-meta">
+                            <span class="date"><i class="far fa-calendar-alt"></i> ۲۰ تیر ۱۴۰۳</span>
+                            <span class="category">هوش مصنوعی</span>
+                        </div>
+                        <a href="#" class="read-more">ادامه خبر <i class="fas fa-chevron-left"></i></a>
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <img src="https://via.placeholder.com/600x400/2980b9/FFFFFF?text=Cybersecurity" alt="Cybersecurity News">
+                    <div class="news-item-body">
+                        <h3>امنیت سایبری: افزایش حملات فیشینگ و راه‌های مقابله</h3>
+                        <p>با توجه به افزایش حملات سایبری، آشنایی با اصول امنیت و روش‌های تشخیص حملات فیشینگ ضروری است...</p>
+                        <div class="news-meta">
+                            <span class="date"><i class="far fa-calendar-alt"></i> ۱۸ تیر ۱۴۰۳</span>
+                            <span class="category">امنیت</span>
+                        </div>
+                        <a href="#" class="read-more">ادامه خبر <i class="fas fa-chevron-left"></i></a>
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <img src="https://via.placeholder.com/600x400/f1c40f/333333?text=Blockchain+Update" alt="Blockchain News">
+                    <div class="news-item-body">
+                        <h3>آینده بلاکچین: فراتر از ارزهای دیجیتال</h3>
+                        <p>تکنولوژی بلاکچین در حال ورود به حوزه‌هایی فراتر از ارزهای دیجیتال مانند مدیریت زنجیره تامین و سلامت است...</p>
+                        <div class="news-meta">
+                            <span class="date"><i class="far fa-calendar-alt"></i> ۱۶ تیر ۱۴۰۳</span>
+                            <span class="category">بلاکچین</span>
+                        </div>
+                        <a href="#" class="read-more">ادامه خبر <i class="fas fa-chevron-left"></i></a>
+                    </div>
+                </div>
+
+                </div>
+            <div class="pagination">
+                <a href="#">۱</a>
+                <a href="#" class="active">۲</a>
+                <a href="#">۳</a>
+                <a href="#">...</a>
+                <a href="#">بعدی</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-col">
+                    <h3>درباره ما</h3>
+                    <p>Azad's Programmer جامعه‌ای پویا برای برنامه‌نویسان با هدف یادگیری و رشد.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>لینک‌های مفید</h3>
+                    <ul>
+                        <li><a href="#">تماس با ما</a></li>
+                        <li><a href="#">حریم خصوصی</a></li>
+                        <li><a href="#">قوانین و مقررات</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>ما را دنبال کنید</h3>
+                    <div class="social-icons">
+                        <a href="https://t.me/your_telegram_group_link" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Azad's Programmer. کلیه حقوق محفوظ است.
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مسابقات و چالش‌ها - Azad's Programmer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Specific styles for Contests Page */
+        .contests-header {
+            background: linear-gradient(to right, #4CAF50, #8bc34a); /* Green gradient */
+            color: var(--light-text-color);
+            padding: 80px 0 40px;
+            text-align: center;
+        }
+        .contests-header h1 {
+            color: var(--light-text-color);
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+        .contests-header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        .contests-content {
+            padding: 60px 0;
+        }
+        .contest-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--border-color);
+        }
+        .contest-tabs button {
+            background-color: transparent;
+            border: none;
+            padding: 15px 25px;
+            font-size: 1.1em;
+            cursor: pointer;
+            font-weight: bold;
+            color: #777;
+            transition: color 0.3s ease, border-bottom 0.3s ease;
+        }
+        .contest-tabs button.active {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--primary-color);
+        }
+        .contest-tabs button:hover:not(.active) {
+            color: var(--secondary-color);
+        }
+
+        .contest-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        .contest-card {
+            background-color: var(--background-color);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+        .contest-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+        }
+        .contest-card-header {
+            background-color: var(--primary-color);
+            color: var(--light-text-color);
+            padding: 15px 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .contest-card-body {
+            padding: 20px;
+        }
+        .contest-card-body h3 {
+            font-size: 1.6em;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        .contest-card-body p {
+            font-size: 0.95em;
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        .contest-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 0.9em;
+            color: #777;
+        }
+        .contest-details span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .contest-details i {
+            color: var(--primary-color);
+        }
+        .contest-card .btn-primary {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        /* Specific badge for contest status */
+        .contest-status-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8em;
+            font-weight: bold;
+            color: var(--light-text-color);
+            z-index: 10;
+        }
+        .status-active { background-color: #28a745; } /* Green */
+        .status-upcoming { background-color: #ffc107; color: #333; } /* Yellow */
+        .status-finished { background-color: #dc3545; } /* Red */
+
+
+        @media (max-width: 768px) {
+            .contests-header h1 {
+                font-size: 2.5em;
+            }
+            .contest-tabs {
+                flex-wrap: wrap;
+            }
+            .contest-tabs button {
+                flex-basis: 100%; /* Each button takes full width */
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body class="contests-page">
+    <header class="main-header">
+    <div class="container">
+        <a href="index.html" class="logo">Azad's Programmer</a>
+        <nav class="main-nav">
+            <ul class="nav-links">
+                <li><a href="index.html">صفحه اصلی</a></li>
+                <li><a href="blog.html">وبلاگ</a></li>
+                <li><a href="news.html">اخبار</a></li>
+                <li><a href="contests.html">مسابقات</a></li>
+                <li><a href="projects.html">پروژه‌ها</a></li>
+                <li><a href="courses.html">دوره‌ها</a></li>
+                <li><a href="roadmap.html">نقشه راه</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <a href="login.html" class="btn btn-primary">ورود</a>
+                <a href="register.html" class="btn btn-secondary">ثبت‌نام</a>
+
+                <div class="user-profile hidden">
+                    <a href="profile.html"> <i class="fas fa-user-circle"></i>
+                        <span>پروفایل من</span>
+                    </a>
+                </div>
+            </div>
+            <div class="hamburger-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </div>
+</header>
+    <div class="contests-header">
+        <div class="container">
+            <h1>مسابقات و چالش‌های برنامه‌نویسی</h1>
+            <p>دانش و مهارت‌های خود را در رقابت با دیگران به چالش بکشید!</p>
+        </div>
+    </div>
+
+    <main class="contests-content">
+        <div class="container">
+            <div class="contest-tabs">
+                <button class="active" data-tab="active">فعال</button>
+                <button data-tab="upcoming">آتی</button>
+                <button data-tab="finished">پایان یافته</button>
+            </div>
+
+            <div class="contest-grid">
+                <div class="contest-card" data-status="active">
+                    <span class="contest-status-badge status-active">فعال</span>
+                    <div class="contest-card-header">
+                        <span>چالش ساخت API با پایتون</span>
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <div class="contest-card-body">
+                        <h3>API Challenge: Flask vs Django</h3>
+                        <p>یک API RESTful با استفاده از Flask یا Django بسازید و بهترین عملکرد را ارائه دهید.</p>
+                        <div class="contest-details">
+                            <span><i class="far fa-calendar-alt"></i> تاریخ پایان: ۳۱ تیر ۱۴۰۳</span>
+                            <span><i class="fas fa-award"></i> جایزه: ۱,۰۰۰,۰۰۰ تومان</span>
+                            <span><i class="fas fa-users"></i> شرکت‌کنندگان: ۱۲۰</span>
+                        </div>
+                        <a href="#" class="btn btn-primary">جزئیات و شرکت</a>
+                    </div>
+                </div>
+
+                <div class="contest-card" data-status="upcoming">
+                    <span class="contest-status-badge status-upcoming">آتی</span>
+                    <div class="contest-card-header">
+                        <span>مسابقه فرانت‌اند: طراحی UI</span>
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <div class="contest-card-body">
+                        <h3>UI/UX Design Contest</h3>
+                        <p>یک رابط کاربری خلاقانه برای یک اپلیکیشن مدیریت پروژه طراحی کنید.</p>
+                        <div class="contest-details">
+                            <span><i class="far fa-calendar-alt"></i> تاریخ شروع: ۱۰ مرداد ۱۴۰۳</span>
+                            <span><i class="fas fa-award"></i> جایزه: دوره آموزشی رایگان</span>
+                            <span><i class="fas fa-users"></i> شرکت‌کنندگان: ۵۰</span>
+                        </div>
+                        <a href="#" class="btn btn-secondary">جزئیات و ثبت‌نام</a>
+                    </div>
+                </div>
+
+                <div class="contest-card" data-status="finished">
+                    <span class="contest-status-badge status-finished">پایان یافته</span>
+                    <div class="contest-card-header">
+                        <span>چالش الگوریتم: مرتب‌سازی</span>
+                        <i class="fas fa-sort-amount-up"></i>
+                    </div>
+                    <div class="contest-card-body">
+                        <h3>Sorting Algorithms Challenge</h3>
+                        <p>بهینه‌ترین الگوریتم مرتب‌سازی را برای داده‌های بزرگ پیاده‌سازی کنید.</p>
+                        <div class="contest-details">
+                            <span><i class="far fa-calendar-alt"></i> تاریخ پایان: ۵ تیر ۱۴۰۳</span>
+                            <span><i class="fas fa-award"></i> جایزه: ۵۰۰,۰۰۰ تومان</span>
+                            <span><i class="fas fa-users"></i> شرکت‌کنندگان: ۸۵</span>
+                        </div>
+                        <a href="#" class="btn btn-secondary">مشاهده نتایج</a>
+                    </div>
+                </div>
+
+                </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-col">
+                    <h3>درباره ما</h3>
+                    <p>Azad's Programmer جامعه‌ای پویا برای برنامه‌نویسان با هدف یادگیری و رشد.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>لینک‌های مفید</h3>
+                    <ul>
+                        <li><a href="#">تماس با ما</a></li>
+                        <li><a href="#">حریم خصوصی</a></li>
+                        <li><a href="#">قوانین و مقررات</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>ما را دنبال کنید</h3>
+                    <div class="social-icons">
+                        <a href="https://t.me/your_telegram_group_link" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Azad's Programmer. کلیه حقوق محفوظ است.
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        // JavaScript for Contest Tabs
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.contest-tabs button');
+            const contestCards = document.querySelectorAll('.contest-card');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Remove active class from all tabs
+                    tabs.forEach(t => t.classList.remove('active'));
+                    // Add active class to clicked tab
+                    tab.classList.add('active');
+
+                    const filter = tab.dataset.tab; // 'active', 'upcoming', 'finished'
+
+                    contestCards.forEach(card => {
+                        const status = card.dataset.status;
+                        if (filter === 'all' || status === filter) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Initial display: show only active contests
+            document.querySelector('.contest-tabs button[data-tab="active"]').click();
+        });
+    </script>
+</body>
+</html>

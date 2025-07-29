@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ثبت‌نام - Azad's Programmer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Specific styles for Login/Register Pages (same as login.html for reusability) */
+        .auth-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - var(--header-height) - 150px); /* Adjust based on header/footer height */
+            padding: 40px 20px;
+            background-color: var(--light-bg-color);
+        }
+        .auth-box {
+            background-color: var(--background-color);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+        }
+        .auth-box h2 {
+            font-size: 2em;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+        }
+        .auth-form .form-group {
+            margin-bottom: 20px;
+            text-align: right; /* For RTL */
+        }
+        .auth-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #555;
+        }
+        .auth-form input[type="text"],
+        .auth-form input[type="email"],
+        .auth-form input[type="password"] {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            font-size: 1em;
+            font-family: 'Vazirmatn', sans-serif; /* Ensure Vazirmatn font for inputs */
+        }
+        .auth-form input[type="text"]:focus,
+        .auth-form input[type="email"]:focus,
+        .auth-form input[type="password"]:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(106, 13, 173, 0.2);
+        }
+        .auth-form .btn-submit {
+            width: 100%;
+            padding: 12px;
+            font-size: 1.1em;
+            margin-top: 20px;
+        }
+        .auth-links {
+            margin-top: 25px;
+            font-size: 0.95em;
+        }
+        .auth-links a {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+    <div class="container">
+        <a href="index.html" class="logo">Azad's Programmer</a>
+        <nav class="main-nav">
+            <ul class="nav-links">
+                <li><a href="index.html">صفحه اصلی</a></li>
+                <li><a href="blog.html">وبلاگ</a></li>
+                <li><a href="news.html">اخبار</a></li>
+                <li><a href="contests.html">مسابقات</a></li>
+                <li><a href="projects.html">پروژه‌ها</a></li>
+                <li><a href="courses.html">دوره‌ها</a></li>
+                <li><a href="roadmap.html">نقشه راه</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <a href="login.html" class="btn btn-primary">ورود</a>
+                <a href="register.html" class="btn btn-secondary">ثبت‌نام</a>
+
+                <div class="user-profile hidden">
+                    <a href="profile.html"> <i class="fas fa-user-circle"></i>
+                        <span>پروفایل من</span>
+                    </a>
+                </div>
+            </div>
+            <div class="hamburger-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </div>
+</header>
+
+    <main class="auth-container">
+        <div class="auth-box">
+            <h2>ثبت‌نام کاربر جدید</h2>
+            <form class="auth-form">
+                <div class="form-group">
+                    <label for="fullname">نام و نام خانوادگی</label>
+                    <input type="text" id="fullname" name="fullname" required>
+                </div>
+                <div class="form-group">
+                    <label for="username">نام کاربری</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">ایمیل</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">رمز عبور</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">تکرار رمز عبور</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-submit">ثبت‌نام</button>
+            </form>
+            <div class="auth-links">
+                <span>قبلاً حساب کاربری دارید؟ <a href="login.html">وارد شوید</a></span>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+    <div class="container">
+        <div class="footer-columns">
+            <div class="footer-col">
+                <h3>درباره ما</h3>
+                <p>Azad's Programmer جامعه‌ای پویا برای برنامه‌نویسان با هدف یادگیری و رشد.</p>
+            </div>
+            <div class="footer-col">
+                <h3>لینک‌های مفید</h3>
+                <ul>
+                    <li><a href="#">تماس با ما</a></li>
+                    <li><a href="#">حریم خصوصی</a></li>
+                    <li><a href="#">قوانین و مقررات</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>ما را دنبال کنید</h3>
+                <div class="social-icons">
+                    <a href="https://t.me/your_telegram_group_link" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 Azad's Programmer. کلیه حقوق محفوظ است.
+        </div>
+    </div>
+</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

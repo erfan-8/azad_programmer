@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نقشه راه یادگیری - Azad's Programmer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body class="roadmap-page"> <header class="main-header">
+        <div class="container">
+            <a href="index.html" class="logo">Azad's Programmer</a>
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html">صفحه اصلی</a></li>
+                    <li><a href="blog.html">وبلاگ</a></li>
+                    <li><a href="news.html">اخبار</a></li>
+                    <li><a href="contests.html">مسابقات</a></li>
+                    <li><a href="projects.html">پروژه‌ها</a></li>
+                    <li><a href="courses.html">دوره‌ها</a></li>
+                    <li><a href="roadmap.html">نقشه راه</a></li> </ul>
+                <div class="auth-buttons">
+                    <a href="login.html" class="btn btn-primary">ورود</a>
+                    <a href="register.html" class="btn btn-secondary">ثبت‌نام</a>
+                    <div class="user-profile hidden">
+                        <a href="profile.html">
+                            <i class="fas fa-user-circle"></i>
+                            <span>پروفایل من</span>
+                        </a>
+                        <div class="profile-dropdown">
+                            <a href="profile.html#dashboard">مشاهده پروفایل</a>
+                            <a href="profile.html#settings">تنظیمات</a>
+                            <a href="#">خروج</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hamburger-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <div class="roadmap-header">
+        <div class="container">
+            <h1>نقشه راه یادگیری برنامه‌نویسی</h1>
+            <p>حوزه مورد علاقه خود را انتخاب کنید و مسیر یادگیری پیشنهادی را مشاهده کنید.</p>
+        </div>
+    </div>
+
+    <main class="roadmap-content">
+        <div class="container">
+            <div class="roadmap-selection-box">
+                <h2>انتخاب حوزه یادگیری</h2>
+                <div class="field-selection-grid">
+                    <div class="field-card" data-field="frontend">
+                        <i class="fas fa-desktop"></i>
+                        <h3>فرانت‌اند</h3>
+                        <p>ساخت رابط کاربری زیبا و تعاملی وب.</p>
+                    </div>
+                    <div class="field-card" data-field="backend">
+                        <i class="fas fa-server"></i>
+                        <h3>بک‌اند</h3>
+                        <p>مدیریت منطق سمت سرور و پایگاه داده.</p>
+                    </div>
+                    <div class="field-card" data-field="mobile">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>موبایل</h3>
+                        <p>توسعه اپلیکیشن‌های اندروید و iOS.</p>
+                    </div>
+                    <div class="field-card" data-field="datascience">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>علم داده</h3>
+                        <p>تجزیه و تحلیل داده‌ها و ساخت مدل‌های پیش‌بینی.</p>
+                    </div>
+                    <div class="field-card" data-field="devops">
+                        <i class="fas fa-cogs"></i>
+                        <h3>DevOps</h3>
+                        <p>اتوماسیون فرآیندهای توسعه و استقرار.</p>
+                    </div>
+                    <div class="field-card" data-field="gamedev">
+                        <i class="fas fa-gamepad"></i>
+                        <h3>توسعه بازی</h3>
+                        <p>خلق بازی‌های ویدئویی جذاب و سرگرم‌کننده.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="roadmap-display-area">
+                <div id="default-message" class="roadmap-message active">
+                    <i class="fas fa-info-circle"></i>
+                    <p>برای مشاهده نقشه راه، ابتدا یک حوزه از بالا انتخاب کنید.</p>
+                </div>
+
+                <div id="roadmap-frontend" class="roadmap-section hidden">
+                    <h2>نقشه راه فرانت‌اند</h2>
+                    <p class="roadmap-description">این مسیر شما را از مبانی وب به سمت ساخت رابط‌های کاربری پیچیده و مدرن هدایت می‌کند.</p>
+                    <div class="roadmap-steps">
+                        <div class="step-card">
+                            <div class="step-number">۱</div>
+                            <h3>مبانی وب (HTML, CSS)</h3>
+                            <ul>
+                                <li>HTML5: ساختار صفحات</li>
+                                <li>CSS3: استایل‌دهی و ریسپانسیو دیزاین</li>
+                                <li>ابزارهای توسعه‌دهنده مرورگر</li>
+                            </ul>
+                            <a href="courses.html" class="btn btn-secondary btn-small">دوره‌های مرتبط</a>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-number">۲</div>
+                            <h3>مبانی جاوا اسکریپت</h3>
+                            <ul>
+                                <li>مفاهیم اصلی JS (متغیرها، توابع، حلقه‌ها)</li>
+                                <li>DOM Manipulation</li>
+                                <li>ES6+ Features</li>
+                            </ul>
+                            <a href="courses.html" class="btn btn-secondary btn-small">دوره‌های مرتبط</a>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-number">۳</div>
+                            <h3>انتخاب فریم‌ورک/کتابخانه</h3>
+                            <ul>
+                                <li>React.js / Vue.js / Angular</li>
+                                <li>مدیریت وضعیت (Redux/Vuex)</li>
+                                <li>Routing</li>
+                            </ul>
+                            <a href="courses.html" class="btn btn-secondary btn-small">دوره‌های مرتبط</a>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-number">۴</div>
+                            <h3>تکمیل مهارت‌ها</h3>
+                            <ul>
+                                <li>سیستم‌های Build (Webpack/Vite)</li>
+                                <li>تست‌نویسی (Jest/React Testing Library)</li>
+                                <li>مفاهیم SSR/SSG</li>
+                            </ul>
+                            <a href="courses.html" class="btn btn-secondary btn-small">دوره‌های مرتبط</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="roadmap-backend" class="roadmap-section hidden">
+                    <h2>نقشه راه بک‌اند</h2>
+                    <p class="roadmap-description">این نقشه راه شما را به سمت ساخت سیستم‌های قدرتمند سمت سرور هدایت می‌کند.</p>
+                    <div class="roadmap-steps">
+                        <div class="step-card">
+                            <div class="step-number">۱</div>
+                            <h3>انتخاب زبان برنامه‌نویسی</h3>
+                            <ul>
+                                <li>پایتون (Django/Flask)</li>
+                                <li>Node.js (Express/NestJS)</li>
+                                <li>PHP (Laravel) / Ruby (Rails)</li>
+                            </ul>
+                            <a href="courses.html" class="btn btn-secondary btn-small">دوره‌های مرتبط</a>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-number">۲</div>
+                            <h3>مفاهیم پایگاه داده</h3>
+                            <ul>
+                                <li>پایگاه داده‌های رابطه‌ای (SQL - PostgreSQL, MySQL)</li>
+                                <li>پایگاه داده‌های NoSQL (MongoDB, Redis)</li>
+                                <li>ORM/ODM</li>
+                            </ul>
+                            <a href="courses.html" class="btn btn-secondary btn-small">دوره‌های مرتبط</a>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-number">۳</div>
+                            <h3>API Design & Development</h3>
+                            <ul>
+                                <li>RESTful APIs</li>
+                                <li>GraphQL</li>
+                                <li>Authentication & Authorization</li>
+                            </ul>
+                            <a href="courses.html" class="btn btn-secondary btn-small">دوره‌های مرتبط</a>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-number">۴</div>
+                            <h3>استقرار و مقیاس‌پذیری</h3>
+                            <ul>
+                                <li>Docker / Kubernetes</li>
+                                <li>Cloud Platforms (AWS, Google Cloud)</li>
+                                <li>CI/CD</li>
+                            </ul>
+                            <a href="courses.html" class="btn btn-secondary btn-small">دوره‌های مرتبط</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="roadmap-mobile" class="roadmap-section hidden">
+                    <h2>نقشه راه توسعه موبایل</h2>
+                    <p class="roadmap-description">ساخت اپلیکیشن‌های موبایل بومی یا کراس‌پلتفرم برای دستگاه‌های هوشمند.</p>
+                    <div class="roadmap-steps">
+                        <div class="step-card">
+                            <div class="step-number">۱</div>
+                            <h3>انتخاب پلتفرم</h3>
+                            <ul>
+                                <li>اندروید (Kotlin/Java)</li>
+                                <li>iOS (Swift/Objective-C)</li>
+                                <li>کراس‌پلتفرم (React Native/Flutter)</li>
+                            </ul>
+                            <a href="courses.html" class="btn btn-secondary btn-small">دوره‌های مرتبط</a>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-number">۲</div>
+                            <h3>مبانی UI/UX موبایل</h3>
+                            <ul>
+                                <li>طراحی واکنش‌گرا</li>
+                                <li>اصول Material Design/Human Interface Guidelines</li>
+                            </ul>
+                            <a href="courses.html" class="btn btn-secondary btn-small">دوره‌های مرتبط</a>
+                        </div>
+                        </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-col">
+                    <h3>درباره ما</h3>
+                    <p>Azad's Programmer جامعه‌ای پویا برای برنامه‌نویسان با هدف یادگیری و رشد.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>لینک‌های مفید</h3>
+                    <ul>
+                        <li><a href="#">تماس با ما</a></li>
+                        <li><a href="#">حریم خصوصی</a></li>
+                        <li><a href="#">قوانین و مقررات</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>ما را دنبال کنید</h3>
+                    <div class="social-icons">
+                        <a href="https://t.me/your_telegram_group_link" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Azad's Programmer. کلیه حقوق محفوظ است.
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

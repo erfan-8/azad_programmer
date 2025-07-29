@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پروفایل کاربری - Azad's Programmer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Specific styles for User Profile Page */
+        .profile-header {
+            background: linear-gradient(to right, #007bff, #0056b3); /* Blue gradient */
+            color: var(--light-text-color);
+            padding: 80px 0 40px;
+            text-align: center;
+        }
+        .profile-header h1 {
+            color: var(--light-text-color);
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+        .profile-header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        .profile-content {
+            padding: 60px 0;
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+            align-items: flex-start; /* Align items to the top */
+        }
+        .profile-sidebar {
+            flex: 0 0 280px; /* Fixed width sidebar */
+            background-color: var(--background-color);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            padding: 30px;
+            text-align: center;
+        }
+        .profile-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 4px solid var(--primary-color);
+            box-shadow: 0 0 0 5px rgba(106, 13, 173, 0.2);
+        }
+        .profile-sidebar h2 {
+            font-size: 1.8em;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        .profile-sidebar p {
+            font-size: 1em;
+            color: #777;
+            margin-bottom: 25px;
+        }
+        .profile-sidebar-nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        .profile-sidebar-nav li {
+            margin-bottom: 10px;
+        }
+        .profile-sidebar-nav a {
+            display: block;
+            padding: 12px 15px;
+            background-color: var(--light-bg-color);
+            border-radius: 8px;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            text-align: right;
+        }
+        .profile-sidebar-nav a:hover, .profile-sidebar-nav a.active {
+            background-color: var(--primary-color);
+            color: var(--light-text-color);
+        }
+
+        .profile-main-content {
+            flex: 1; /* Takes remaining space */
+            min-width: 300px; /* Minimum width for main content */
+        }
+        .profile-section {
+            background-color: var(--background-color);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            padding: 30px;
+            margin-bottom: 30px;
+            text-align: right;
+        }
+        .profile-section h2 {
+            font-size: 2em;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* Single column for default */
+            gap: 15px;
+        }
+        .info-item strong {
+            display: block;
+            color: #555;
+            margin-bottom: 5px;
+            font-size: 0.9em;
+        }
+        .info-item span {
+            font-weight: bold;
+            color: var(--text-color);
+            font-size: 1.1em;
+        }
+
+        /* Similar card styles for courses/projects in profile */
+        .profile-courses-grid, .profile-projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .profile-course-card, .profile-project-card {
+            background-color: var(--light-bg-color);
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease;
+        }
+        .profile-course-card:hover, .profile-project-card:hover {
+            transform: translateY(-3px);
+        }
+        .profile-course-card h3, .profile-project-card h3 {
+            font-size: 1.2em;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        .profile-course-card p, .profile-project-card p {
+            font-size: 0.9em;
+            color: #666;
+        }
+        .no-items {
+            text-align: center;
+            color: #777;
+            font-size: 1.1em;
+            padding: 30px;
+        }
+
+        @media (min-width: 769px) {
+            .info-grid {
+                grid-template-columns: 1fr 1fr; /* Two columns for larger screens */
+            }
+        }
+        @media (max-width: 992px) {
+            .profile-content {
+                flex-direction: column;
+                align-items: center; /* Center items when stacked */
+            }
+            .profile-sidebar {
+                width: 100%;
+                flex: none; /* Remove fixed width */
+                max-width: 450px; /* Limit width */
+            }
+            .profile-sidebar-nav ul {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .profile-sidebar-nav li {
+                margin: 5px 10px;
+            }
+            .profile-main-content {
+                width: 100%;
+                flex: none; /* Remove flex grow */
+                max-width: 900px; /* Limit width */
+            }
+        }
+        @media (max-width: 768px) {
+            .profile-header h1 {
+                font-size: 2.5em;
+            }
+            .profile-sidebar, .profile-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body class="projects-page">
+    <header class="main-header">
+    <div class="container">
+        <a href="index.html" class="logo">Azad's Programmer</a>
+        <nav class="main-nav">
+            <ul class="nav-links">
+                <li><a href="index.html">صفحه اصلی</a></li>
+                <li><a href="blog.html">وبلاگ</a></li>
+                <li><a href="news.html">اخبار</a></li>
+                <li><a href="contests.html">مسابقات</a></li>
+                <li><a href="projects.html">پروژه‌ها</a></li>
+                <li><a href="courses.html">دوره‌ها</a></li>
+                <li><a href="roadmap.html">نقشه راه</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <a href="login.html" class="btn btn-primary">ورود</a>
+                <a href="register.html" class="btn btn-secondary">ثبت‌نام</a>
+
+                <div class="user-profile hidden">
+                    <a href="profile.html"> <i class="fas fa-user-circle"></i>
+                        <span>پروفایل من</span>
+                    </a>
+                </div>
+            </div>
+            <div class="hamburger-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </div>
+</header>
+    <div class="profile-header">
+        <div class="container">
+            <h1>پروفایل کاربری</h1>
+            <p>مدیریت اطلاعات، دوره‌ها و پروژه‌های شما.</p>
+        </div>
+    </div>
+
+    <main class="profile-content container">
+        <div class="profile-sidebar">
+            <img src="https://via.placeholder.com/120x120/7b68ee/FFFFFF?text=User" alt="User Avatar" class="profile-avatar">
+            <h2>نام کاربری من</h2>
+            <p>توسعه‌دهنده فرانت‌اند</p>
+            <a href="#" class="btn btn-primary" style="margin-bottom: 20px;">ویرایش پروفایل</a>
+
+            <nav class="profile-sidebar-nav">
+                <ul>
+                    <li><a href="#dashboard" class="active">داشبورد</a></li>
+                    <li><a href="#my-courses">دوره‌های من</a></li>
+                    <li><a href="#my-projects">پروژه‌های من</a></li>
+                    <li><a href="#contest-history">تاریخچه مسابقات</a></li>
+                    <li><a href="#settings">تنظیمات حساب</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="profile-main-content">
+            <section id="dashboard" class="profile-section">
+                <h2>داشبورد</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <strong>نام:</strong>
+                        <span>جان دو</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>ایمیل:</strong>
+                        <span>john.doe@example.com</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>نام کاربری:</strong>
+                        <span>johndoe</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>تاریخ عضویت:</strong>
+                        <span>۱۵ اسفند ۱۴۰۲</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>تعداد دوره‌های ثبت‌نام شده:</strong>
+                        <span>۳ دوره</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>تعداد پروژه‌های فعال:</strong>
+                        <span>۱ پروژه</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="my-courses" class="profile-section">
+                <h2>دوره‌های من</h2>
+                <div class="profile-courses-grid">
+                    <div class="profile-course-card">
+                        <h3>مقدماتی پایتون</h3>
+                        <p>دوره کامل آموزش برنامه‌نویسی پایتون از صفر.</p>
+                        <a href="#" class="btn btn-secondary" style="margin-top: 10px; width: 100%;">مشاهده دوره</a>
+                    </div>
+                    <div class="profile-course-card">
+                        <h3>مقدمه‌ای بر React.js</h3>
+                        <p>آشنایی با اصول و مبانی کتابخانه React برای ساخت UI.</p>
+                        <a href="#" class="btn btn-secondary" style="margin-top: 10px; width: 100%;">مشاهده دوره</a>
+                    </div>
+                    <div class="no-items hidden">هنوز در هیچ دوره‌ای ثبت‌نام نکرده‌اید.</div>
+                </div>
+            </section>
+
+            <section id="my-projects" class="profile-section">
+                <h2>پروژه‌های من</h2>
+                <div class="profile-projects-grid">
+                    <div class="profile-project-card">
+                        <h3>اپلیکیشن Todo List</h3>
+                        <p>پروژه‌ای برای ساخت یک اپلیکیشن مدیریت وظایف با Vue.js</p>
+                        <span class="project-status-badge status-inprogress" style="position: static; margin-top: 10px;">در حال انجام</span>
+                        <a href="#" class="btn btn-secondary" style="margin-top: 10px; width: 100%;">مشاهده جزئیات</a>
+                    </div>
+                    <div class="no-items hidden">هنوز هیچ پروژه‌ای ثبت نکرده‌اید.</div>
+                </div>
+            </section>
+
+            <section id="contest-history" class="profile-section">
+                <h2>تاریخچه مسابقات</h2>
+                <p class="no-items">شما در هیچ مسابقه‌ای شرکت نکرده‌اید.</p>
+            </section>
+
+            <section id="settings" class="profile-section">
+                <h2>تنظیمات حساب</h2>
+                <p class="no-items">تنظیمات مربوط به حساب کاربری شما در اینجا قرار می‌گیرد.</p>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-col">
+                    <h3>درباره ما</h3>
+                    <p>Azad's Programmer جامعه‌ای پویا برای برنامه‌نویسان با هدف یادگیری و رشد.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>لینک‌های مفید</h3>
+                    <ul>
+                        <li><a href="#">تماس با ما</a></li>
+                        <li><a href="#">حریم خصوصی</a></li>
+                        <li><a href="#">قوانین و مقررات</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>ما را دنبال کنید</h3>
+                    <div class="social-icons">
+                        <a href="https://t.me/your_telegram_group_link" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Azad's Programmer. کلیه حقوق محفوظ است.
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        // JavaScript for Profile Sidebar Navigation (Scroll to section or simulate tab)
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebarLinks = document.querySelectorAll('.profile-sidebar-nav a');
+            const profileSections = document.querySelectorAll('.profile-section');
+
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault(); // Prevent default anchor jump
+
+                    sidebarLinks.forEach(l => l.classList.remove('active'));
+                    link.classList.add('active');
+
+                    const targetId = link.getAttribute('href'); // e.g., '#dashboard'
+                    const targetSection = document.querySelector(targetId);
+
+                    profileSections.forEach(section => {
+                        section.style.display = 'none'; // Hide all sections
+                    });
+
+                    if (targetSection) {
+                        targetSection.style.display = 'block'; // Show target section
+                        // Optional: Scroll to the section smoothly
+                        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+
+            // Set initial active state and display for the first section
+            document.querySelector('.profile-sidebar-nav a.active').click();
+        });
+    </script>
+</body>
+</html>
